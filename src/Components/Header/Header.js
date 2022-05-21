@@ -1,7 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = ({ children }) => {
+  const { pathname } = useLocation();
   return (
     <div class="drawer drawer-end">
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
@@ -11,6 +12,14 @@ const Header = ({ children }) => {
           <div class="flex-1 px-2 mx-2 font-bold md:text-3xl text-2xl text-accent ">
             Pro<span className="text-primary">Electronic</span>{" "}
           </div>
+          {pathname.includes("dashboard") && (
+            <label
+              for="my-drawer-2"
+              class="btn btn-primary drawer-button lg:hidden"
+            >
+              Dashboard
+            </label>
+          )}
           <div class="flex-none lg:hidden">
             <label
               for="my-drawer-3"
@@ -32,7 +41,7 @@ const Header = ({ children }) => {
             </label>
           </div>
 
-          <div class="flex-none hidden lg:block">
+          <div class="flex-none hidden lg:block ">
             <ul class="menu gap-3 text-accent menu-horizontal">
               <li>
                 <NavLink to="/">Home</NavLink>
@@ -58,31 +67,29 @@ const Header = ({ children }) => {
         {/* <!-- Page content here --> */}
         {children}
       </div>
-      <div class="drawer-side ">
+      <div class="drawer-side">
         <label for="my-drawer-3" class="drawer-overlay"></label>
         <ul class="menu gap-3 p-4 overflow-y-auto w-80 bg-base-100">
           {/* <!-- Sidebar content here --> */}
-          <ul class="menu gap-3 text-accent menu-horizontal">
-            {/* <!-- Navbar menu content here --> */}
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/blogs">Blogs</NavLink>
-            </li>
-            <li>
-              <NavLink to="/portfolio">Portfolio</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard">Dashboard</NavLink>
-            </li>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
-            <li>
-              <NavLink to="/sin-up">Sin up</NavLink>
-            </li>
-          </ul>
+
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/blogs">Blogs</NavLink>
+          </li>
+          <li>
+            <NavLink to="/portfolio">Portfolio</NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </li>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
+          <li>
+            <NavLink to="/sin-up">Sin up</NavLink>
+          </li>
         </ul>
       </div>
     </div>

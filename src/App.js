@@ -1,9 +1,11 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Error from "./Pages/Error/Error";
 import { PrivetRoutes } from "./Routes/PrivetRouts";
 import { PublicRoutes } from "./Routes/PublicRoutes";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -29,6 +31,17 @@ function App() {
 
         <Footer></Footer>
       </Header>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }

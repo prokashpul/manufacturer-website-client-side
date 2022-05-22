@@ -1,7 +1,9 @@
 import React from "react";
+import Title from "../../Utilities/PathTitle/PathTitle";
 import Contract from "./Contract/Contract";
 
 const Portfolio = () => {
+  Title("My Portfolio");
   return (
     <>
       <div className="md:w-[980px] w-[95%] mx-auto">

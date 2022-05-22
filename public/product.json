@@ -4,7 +4,7 @@
     "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
     "image": "https://i.ibb.co/N9GN0kW/product-2.jpg",
     "price": 23,
-    "minOrder": 100,
+    "min-order": 100,
     "quantity": 10000,
     "_id": 1
   },
@@ -13,7 +13,7 @@
     "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
     "image": "https://i.ibb.co/m4qTkpc/product-7.jpg",
     "price": 23,
-    "minOrder": 100,
+    "min-order": 100,
     "quantity": 10000,
     "_id": 2
   },
@@ -22,7 +22,7 @@
     "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
     "image": "https://i.ibb.co/TWc00DW/category-5.jpg",
     "price": 23,
-    "minOrder": 100,
+    "min-order": 100,
     "quantity": 10000,
     "_id": 3
   },
@@ -31,7 +31,7 @@
     "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
     "image": "https://i.ibb.co/5T0V3dV/product-9.jpg",
     "price": 23,
-    "minOrder": 100,
+    "min-order": 100,
     "quantity": 10000,
     "_id": 4
   },
@@ -40,7 +40,7 @@
     "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
     "image": "https://i.ibb.co/bJjMJhX/product-3.jpg",
     "price": 23,
-    "minOrder": 100,
+    "min-order": 100,
     "quantity": 10000,
     "_id": 5
   },
@@ -49,7 +49,7 @@
     "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
     "image": "https://i.ibb.co/T1Dszjn/product-5.jpg",
     "price": 23,
-    "minOrder": 100,
+    "min-order": 100,
     "quantity": 10000,
     "_id": 6
   }

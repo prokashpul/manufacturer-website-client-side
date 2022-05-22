@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import Title from "../../Utilities/PathTitle/PathTitle";
 
 const Dashboard = () => {
-  Title("My Dashboard");
+  Title("Dashboard");
   return (
     <div className="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />

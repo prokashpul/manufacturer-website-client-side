@@ -7,7 +7,7 @@ import ToolsDetails from "./toolsDeatils/ToolsDetails";
 const Tools = () => {
   const { data, isLoading } = useQuery(
     "tool",
-    async () => await axios("product.json")
+    async () => await axios("http://localhost:5000/tools")
   );
   if (isLoading) {
     return <Loader></Loader>;

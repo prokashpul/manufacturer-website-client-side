@@ -14,4 +14,5 @@
 > - React-icons
 > - React-slick slider
 > - React-query
-> - axios
+> - Axios
+> - React-countup

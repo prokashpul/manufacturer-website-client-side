@@ -1,8 +1,18 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Firebase/firebase.init";
+import { signOut } from "firebase/auth";
 
 const Header = ({ children }) => {
   const { pathname } = useLocation();
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+  //sinOut button handel
+  const handelSinOut = () => {
+    signOut(auth);
+    navigate("/");
+  };
   return (
     <div class="drawer drawer-end">
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
@@ -55,12 +65,22 @@ const Header = ({ children }) => {
               <li>
                 <NavLink to="/dashboard">Dashboard</NavLink>
               </li>
-              <li>
-                <NavLink to="/login">Login</NavLink>
-              </li>
-              <li>
-                <NavLink to="/sin-up">Sin up</NavLink>
-              </li>
+              {user ? (
+                <>
+                  <li>
+                    <button onClick={() => handelSinOut()}>Sin Out</button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <NavLink to="/login">Login</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/sin-up">Sin up</NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

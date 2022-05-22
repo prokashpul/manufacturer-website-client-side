@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
+import useToken from "../../../Hooks/useToken";
 import Loader from "../../../Utilities/Loader/Loader";
 import Title from "../../../Utilities/PathTitle/PathTitle";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -22,6 +23,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const [token] = useToken(user);
   if (error) {
     toast.error(error.message);
   }
@@ -34,7 +36,7 @@ const Login = () => {
     reset();
   };
 
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
 

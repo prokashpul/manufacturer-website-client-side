@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
+import useToken from "../../../Hooks/useToken";
 import Loader from "../../../Utilities/Loader/Loader";
 import Title from "../../../Utilities/PathTitle/PathTitle";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -19,6 +20,7 @@ const Registration = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const [token] = useToken(user);
   const {
     register,
     handleSubmit,
@@ -34,7 +36,7 @@ const Registration = () => {
     await updateProfile({ displayName: name });
     reset();
   };
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
   if (error || upError) {

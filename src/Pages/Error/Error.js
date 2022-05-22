@@ -1,7 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Title from "../../Utilities/PathTitle/PathTitle";
 
 const Error = () => {
+  Title("Page Not Found");
   const navigate = useNavigate();
   return (
     <div className="md:min-h-screen grid md:grid-flow-col  justify-center items-center md:gap-5 bg-primary py-10 md:py-2">

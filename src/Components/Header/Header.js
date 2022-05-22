@@ -36,7 +36,10 @@ const Header = ({ children }) => {
               <div class="dropdown dropdown-hover dropdown-end">
                 <label tabIndex="0" class="btn btn-ghost btn-circle avatar">
                   <div class="w-10 rounded-full">
-                    <img src={`${user?.photoURL ? user?.photoURL : imgUrl}`} />
+                    <img
+                      src={`${user?.photoURL ? user?.photoURL : imgUrl}`}
+                      alt={`${user?.displayName}`}
+                    />
                   </div>
                 </label>
                 <ul
@@ -54,7 +57,7 @@ const Header = ({ children }) => {
                   </li>
                   <li>
                     <button
-                      className="text-secondary"
+                      className="text-secondary uppercase"
                       onClick={() => handelSinOut()}
                     >
                       Sin Out
@@ -122,6 +125,7 @@ const Header = ({ children }) => {
                         <div class="w-10 rounded-full">
                           <img
                             src={`${user?.photoURL ? user?.photoURL : imgUrl}`}
+                            alt={`${user?.displayName}`}
                           />
                         </div>
                       </label>
@@ -139,7 +143,10 @@ const Header = ({ children }) => {
                           </NavLink>
                         </li>
                         <li>
-                          <button onClick={() => handelSinOut()}>
+                          <button
+                            className="uppercase"
+                            onClick={() => handelSinOut()}
+                          >
                             Sin Out
                           </button>
                         </li>
@@ -195,7 +202,10 @@ const Header = ({ children }) => {
 
           {user && (
             <li>
-              <button className="text-secondary" onClick={() => handelSinOut()}>
+              <button
+                className="text-secondary uppercase"
+                onClick={() => handelSinOut()}
+              >
                 Sin Out
               </button>
             </li>

@@ -11,3 +11,4 @@
 > - React Query
 > - React Hook Form
 > - react-toastify
+> - react-icons

@@ -18,6 +18,7 @@ const Login = () => {
   } = useForm();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -29,13 +30,13 @@ const Login = () => {
   }
   const onSubmit = async (data) => {
     await signInWithEmailAndPassword(data.email, data.password);
-    toast.success(`Hi 1 ! ${user?.displayName}`);
+    toast.success(`Hello  ! welcome to Pro Electronic`);
     reset();
   };
+
   if (user) {
     navigate(from, { replace: true });
   }
-  console.log(user);
 
   return (
     <div className="hero my-10 ">
@@ -102,7 +103,7 @@ const Login = () => {
               Create Account !
             </Link>
           </p>
-          <div class="divider">OR</div>
+          <div className="divider">OR</div>
           <div className="flex justify-center">
             <SocialLogin></SocialLogin>
           </div>

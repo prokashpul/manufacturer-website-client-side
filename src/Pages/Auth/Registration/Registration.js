@@ -122,7 +122,7 @@ const Registration = () => {
               Log In !
             </Link>
           </p>
-          <div class="divider">OR</div>
+          <div className="divider">OR</div>
           <div className="flex justify-center">
             <SocialLogin></SocialLogin>
           </div>

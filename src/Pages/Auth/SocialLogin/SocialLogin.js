@@ -11,7 +11,7 @@ const SocialLogin = () => {
   const from = location.state?.from?.pathname || "/";
 
   if (loading) {
-    return <button class="btn btn-outline loading">loading</button>;
+    return <button className="btn btn-outline loading">loading</button>;
   }
   if (error) {
     toast.error(error.message);

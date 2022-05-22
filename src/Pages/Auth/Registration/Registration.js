@@ -44,7 +44,7 @@ const Registration = () => {
     <div className="hero my-10 ">
       <div className="card flex-shrink-0 w-[95%] md:w-full max-w-sm shadow-2xl bg-base-100">
         <h2 className="text-center font-bold text-3xl mt-5">
-          Registration NoW !
+          Registration Now !
         </h2>
         <div className="card-body">
           <form onSubmit={handleSubmit(onSubmit)}>

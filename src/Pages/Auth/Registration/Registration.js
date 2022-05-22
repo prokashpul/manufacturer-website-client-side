@@ -4,7 +4,7 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
 import Loader from "../../../Utilities/Loader/Loader";
@@ -15,6 +15,8 @@ const Registration = () => {
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, upError] = useUpdateProfile(auth);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -31,7 +33,7 @@ const Registration = () => {
     reset();
   };
   if (user) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
   if (error || upError) {
     toast.error(error.message || upError.message);

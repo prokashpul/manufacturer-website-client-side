@@ -1,7 +1,7 @@
 import React from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
 import Loader from "../../../Utilities/Loader/Loader";
@@ -17,6 +17,8 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   if (error) {
     toast.error(error.message);
   }
@@ -29,7 +31,7 @@ const Login = () => {
     reset();
   };
   if (user) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
   console.log(user);
 

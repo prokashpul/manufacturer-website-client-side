@@ -6,6 +6,7 @@ import Error from "./Pages/Error/Error";
 import { PrivetRoutes } from "./Routes/PrivetRouts";
 import { PublicRoutes } from "./Routes/PublicRoutes";
 import "react-toastify/dist/ReactToastify.css";
+import RequiredAuth from "./Components/RequiredAuth/RequiredAuth";
 
 function App() {
   return (
@@ -23,7 +24,11 @@ function App() {
             <Route
               key={index}
               path={path}
-              element={<Component></Component>}
+              element={
+                <RequiredAuth>
+                  <Component></Component>
+                </RequiredAuth>
+              }
             ></Route>
           ))}
           <Route path="*" element={<Error></Error>}></Route>

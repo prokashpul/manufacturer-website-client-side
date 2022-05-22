@@ -32,7 +32,7 @@ const Header = ({ children }) => {
             </label>
           )}
           {user && (
-            <div class="flex-none">
+            <div class="flex-none lg:hidden">
               <div class="dropdown dropdown-hover dropdown-end">
                 <label tabIndex="0" class="btn btn-ghost btn-circle avatar">
                   <div class="w-10 rounded-full">

@@ -5,9 +5,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
 import Loader from "../../../Utilities/Loader/Loader";
+import Title from "../../../Utilities/PathTitle/PathTitle";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
+  Title("Login Now");
   const {
     register,
     handleSubmit,

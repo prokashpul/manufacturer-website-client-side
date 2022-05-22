@@ -7,6 +7,7 @@ import { PrivetRoutes } from "./Routes/PrivetRouts";
 import { PublicRoutes } from "./Routes/PublicRoutes";
 import "react-toastify/dist/ReactToastify.css";
 import RequiredAuth from "./Components/RequiredAuth/RequiredAuth";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -20,17 +21,26 @@ function App() {
               element={<Component></Component>}
             ></Route>
           ))}
-          {PrivetRoutes.map(({ path, Component }, index) => (
-            <Route
-              key={index}
-              path={path}
-              element={
-                <RequiredAuth>
-                  <Component></Component>
-                </RequiredAuth>
-              }
-            ></Route>
-          ))}
+          <Route
+            path="dashboard"
+            element={
+              <RequiredAuth>
+                <Dashboard></Dashboard>
+              </RequiredAuth>
+            }
+          >
+            {PrivetRoutes.map(({ path, Component }, index) => (
+              <Route
+                key={index}
+                path={path}
+                element={
+                  <RequiredAuth>
+                    <Component></Component>
+                  </RequiredAuth>
+                }
+              ></Route>
+            ))}
+          </Route>
           <Route path="*" element={<Error></Error>}></Route>
         </Routes>
 

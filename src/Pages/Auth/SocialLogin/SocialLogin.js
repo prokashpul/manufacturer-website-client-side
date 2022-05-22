@@ -1,12 +1,14 @@
 import React from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   if (loading) {
     return <button class="btn btn-outline loading">loading</button>;
@@ -15,7 +17,7 @@ const SocialLogin = () => {
     toast.error(error.message);
   }
   if (user) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
   return (
     <button

@@ -65,7 +65,7 @@ const Login = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 placeholder="password"
                 className="input input-bordered"
                 {...register("password", {
@@ -94,7 +94,7 @@ const Login = () => {
             </div>
           </form>
           <p>
-            Have not an account?
+            Don't Have an account?
             <Link
               to="/sin-up"
               className="text-text-secondary hover:text-primary ml-3 font-bold"

@@ -115,7 +115,10 @@ const Registration = () => {
           </form>
           <p>
             Already Have an account?
-            <Link to="/login" className="text-secondary font-bold my-3 mr-12">
+            <Link
+              to="/login"
+              className="text-text-secondary hover:text-primary ml-3 font-bold"
+            >
               Log In !
             </Link>
           </p>

@@ -10,6 +10,8 @@
 > - Firebase and react firebase hooks
 > - React Query
 > - React Hook Form
-> - react-toastify
-> - react-icons
-> - react-slick slider
+> - React-toastify
+> - React-icons
+> - React-slick slider
+> - React-query
+> - axios

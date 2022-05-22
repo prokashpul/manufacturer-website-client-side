@@ -7,7 +7,7 @@ import {
 } from "react-icons/hi";
 const OurServices = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden border">
       <div class="stats shadow w-full">
         <div class="stat flex justify-center items-center">
           <div className="text-5xl text-primary">

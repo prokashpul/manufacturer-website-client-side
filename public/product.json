@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Undefined Tool IRadix",
+    "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
+    "image": "https://i.ibb.co/N9GN0kW/product-2.jpg",
+    "price": 23,
+    "minOrder": 100,
+    "quantity": 10000,
+    "_id": 1
+  },
+  {
+    "name": "Brandix Pliers",
+    "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
+    "image": "https://i.ibb.co/m4qTkpc/product-7.jpg",
+    "price": 23,
+    "minOrder": 100,
+    "quantity": 10000,
+    "_id": 2
+  },
+  {
+    "name": "Brandix Router Power Tool",
+    "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
+    "image": "https://i.ibb.co/TWc00DW/category-5.jpg",
+    "price": 23,
+    "minOrder": 100,
+    "quantity": 10000,
+    "_id": 3
+  },
+  {
+    "name": "Drill Series 3 Brandix",
+    "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
+    "image": "https://i.ibb.co/5T0V3dV/product-9.jpg",
+    "price": 23,
+    "minOrder": 100,
+    "quantity": 10000,
+    "_id": 4
+  },
+  {
+    "name": "Drill Screwdriver Brandix",
+    "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
+    "image": "https://i.ibb.co/bJjMJhX/product-3.jpg",
+    "price": 23,
+    "minOrder": 100,
+    "quantity": 10000,
+    "_id": 5
+  },
+  {
+    "name": "Brandix Drilling Machine",
+    "dic": "we are specialist in Portable Electric Planners machine of various brands. Our products are made from high quality of raw material and latest technology. Easy to handle and operate, our electric power planner needs low maintenance cost.",
+    "image": "https://i.ibb.co/T1Dszjn/product-5.jpg",
+    "price": 23,
+    "minOrder": 100,
+    "quantity": 10000,
+    "_id": 6
+  }
+]

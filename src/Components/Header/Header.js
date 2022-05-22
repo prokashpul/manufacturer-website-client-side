@@ -15,27 +15,27 @@ const Header = ({ children }) => {
   };
   const imgUrl = "https://i.ibb.co/7jMg9Xq/circled-user.png";
   return (
-    <div class="drawer drawer-end">
-      <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col">
+    <div className="drawer drawer-end sticky top-0 z-50">
+      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
-        <div class="w-full navbar bg-secondary">
-          <div class="flex-1 px-2 mx-2 font-bold md:text-3xl text-2xl text-accent ">
+        <div className="w-full navbar bg-secondary">
+          <div className="flex-1 px-2 mx-2 font-bold md:text-3xl text-2xl text-accent ">
             Pro<span className="text-primary">Electronic</span>{" "}
           </div>
           {pathname.includes("dashboard") && (
             <label
-              for="my-drawer-2"
-              class="btn btn-primary btn-xs drawer-button lg:hidden"
+              htmlFor="my-drawer-2"
+              className="btn btn-primary btn-xs drawer-button lg:hidden"
             >
               Dashboard
             </label>
           )}
           {user && (
-            <div class="flex-none lg:hidden">
-              <div class="dropdown dropdown-hover dropdown-end">
-                <label tabIndex="0" class="btn btn-ghost btn-circle avatar">
-                  <div class="w-10 rounded-full">
+            <div className="flex-none lg:hidden">
+              <div className="dropdown dropdown-hover dropdown-end">
+                <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
                     <img
                       src={`${user?.photoURL ? user?.photoURL : imgUrl}`}
                       alt={`${user?.displayName}`}
@@ -44,13 +44,12 @@ const Header = ({ children }) => {
                 </label>
                 <ul
                   tabIndex="0"
-                  class="bg-accent menu menu-compact dropdown-content mt-2 p-2 shadow  rounded-box w-52"
+                  className="bg-accent menu menu-compact dropdown-content mt-2 p-2 shadow  rounded-box w-52"
                 >
                   <li>
                     <NavLink
                       className="rounded-lg text-secondary"
                       to="/dashboard/my-profile"
-                      class="justify-between"
                     >
                       {user?.displayName}
                     </NavLink>
@@ -67,29 +66,29 @@ const Header = ({ children }) => {
               </div>
             </div>
           )}
-          <div class="flex-none lg:hidden">
+          <div className="flex-none lg:hidden">
             <label
-              for="my-drawer-3"
-              class="btn btn-square btn-ghost text-accent"
+              htmlFor="my-drawer-3"
+              className="btn btn-square btn-ghost text-accent"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                class="inline-block w-6 h-6 stroke-current"
+                className="inline-block w-6 h-6 stroke-current"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h16M4 18h16"
                 ></path>
               </svg>
             </label>
           </div>
 
-          <div class="flex-none hidden lg:block uppercase">
-            <ul class="menu gap-3 text-accent menu-horizontal">
+          <div className="flex-none hidden lg:block uppercase">
+            <ul className="menu gap-3 text-accent menu-horizontal">
               <li>
                 <NavLink className="rounded-lg text-accent" to="/">
                   Home
@@ -116,13 +115,13 @@ const Header = ({ children }) => {
                     <button onClick={() => handelSinOut()}>Sin Out</button>
                   </li>
 
-                  <div class="flex-none">
-                    <div class="dropdown dropdown-hover dropdown-end">
+                  <div className="flex-none">
+                    <div className="dropdown dropdown-hover dropdown-end">
                       <label
                         tabIndex="0"
-                        class="btn btn-ghost btn-circle avatar"
+                        className="btn btn-ghost btn-circle avatar"
                       >
-                        <div class="w-10 rounded-full">
+                        <div className="w-10 rounded-full">
                           <img
                             src={`${user?.photoURL ? user?.photoURL : imgUrl}`}
                             alt={`${user?.displayName}`}
@@ -131,13 +130,12 @@ const Header = ({ children }) => {
                       </label>
                       <ul
                         tabIndex="0"
-                        class="bg-secondary menu menu-compact dropdown-content mt-2 p-2 shadow  rounded-box w-52"
+                        className="bg-secondary menu menu-compact dropdown-content mt-2 p-2 shadow  rounded-box w-52"
                       >
                         <li>
                           <NavLink
                             className="rounded-lg text-accent"
                             to="/dashboard/my-profile"
-                            class="justify-between"
                           >
                             {user?.displayName}
                           </NavLink>
@@ -174,9 +172,9 @@ const Header = ({ children }) => {
         {/* <!-- Page content here --> */}
         {children}
       </div>
-      <div class="drawer-side">
-        <label for="my-drawer-3" class="drawer-overlay"></label>
-        <ul class="menu gap-3 p-4 overflow-y-auto w-80 bg-base-100 ">
+      <div className="drawer-side">
+        <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
+        <ul className="menu gap-3 p-4 overflow-y-auto w-80 bg-base-100 ">
           {/* <!-- Sidebar content here --> */}
 
           <li>

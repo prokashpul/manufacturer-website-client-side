@@ -12,3 +12,4 @@
 > - React Hook Form
 > - react-toastify
 > - react-icons
+> - react-slick slider

@@ -10,7 +10,7 @@ const Contract = () => {
   return (
     <>
       <h2 className="md:text-4xl text-2xl font-bold uppercase">Contact</h2>
-      <div class="divider bg-primary md:bg-blue-300 h-1"></div>
+      <div className="divider bg-primary md:bg-blue-300 h-1"></div>
       <ul className="flex flex-col gap-2 md:gap-5">
         <li className="flex gap-3 items-start text-xl">
           <HiOutlineLocationMarker className="md:text-3xl text-xl text-secondary" />

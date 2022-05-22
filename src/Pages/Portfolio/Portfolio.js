@@ -1,10 +1,10 @@
 import React from "react";
 import Contract from "./Contract/Contract";
-import { HiMail } from "react-icons/hi";
+
 const Portfolio = () => {
   return (
     <>
-      <div className="md:w-[920px] w-[95%] mx-auto">
+      <div className="md:w-[980px] w-[95%] mx-auto">
         <h2 className="md:text-5xl text-3xl font-bold text-center my-10">
           Portfolio
         </h2>
@@ -18,8 +18,7 @@ const Portfolio = () => {
             </div>
             <div className="md:w-[150px] md:h-[150px] w-[100px] h-[100px]  relative md:mb-[-210px] md:mr-[70px] shadow-lg p-1 bg-accent">
               <img
-                w-full
-                h-full
+                className="w-full h-full"
                 src="https://i.ibb.co/b10qTRS/prokash.jpg"
                 alt="prokash"
               />
@@ -33,7 +32,7 @@ const Portfolio = () => {
               <h2 className="md:text-4xl text-2xl font-bold mt-5 uppercase">
                 OBJECTIVE
               </h2>
-              <div class="divider bg-primary md:bg-blue-300 h-1   md:w-[200px]"></div>
+              <div className="divider bg-primary md:bg-blue-300 h-1   md:w-[200px]"></div>
               <p>
                 I want to be part of an organization where I can use and develop
                 my knowledge and talents for the development of both the
@@ -44,19 +43,20 @@ const Portfolio = () => {
               <h2 className="md:text-4xl text-2xl font-bold mt-5 uppercase">
                 SKILLS
               </h2>
-              <div class="divider bg-primary md:bg-blue-300 h-1   md:w-[200px]"></div>
+              <div className="divider bg-primary md:bg-blue-300 h-1   md:w-[200px]"></div>
               <ul>
                 <li className="flex gap-3 items-start ">
-                  Expertise: ReactJs, Javascript(ES6), Tailwind CSS, Bootstrap,
-                  Responsive design, NodeJs, ExpressJs, Firebase.
+                  <span className="font-extrabold">Expertise:</span> ReactJs,
+                  Javascript(ES6), Tailwind CSS, Bootstrap, Responsive design,
+                  NodeJs, ExpressJs, Firebase.
                 </li>
                 <li className="flex gap-3 items-start ">
-                  Familiar: MongoDB, Figma,Python,Django,wordpress, Heroku,
-                  Netlify .
+                  <span className="font-extrabold">Familiar:</span> MongoDB,
+                  Figma,Python,Django,wordpress, Heroku, Netlify .
                 </li>
                 <li className="flex gap-3 items-start">
-                  Tools & Softwares: VsCode, Git, ChromeDevToo ,Netlify
-                  ,MongoDB, Figma , Postman
+                  <span className="font-extrabold">Tools:</span> VsCode, Git,
+                  ChromeDevToo ,Netlify ,MongoDB, Figma , Postman
                 </li>
               </ul>
             </div>

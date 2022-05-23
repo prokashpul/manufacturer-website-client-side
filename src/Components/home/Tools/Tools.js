@@ -1,16 +1,20 @@
 import React from "react";
 import { useQuery } from "react-query";
+import { toast } from "react-toastify";
 import { request } from "../../../Utilities/AxiousUtilities/AxiousUtilities";
 import Loader from "../../../Utilities/Loader/Loader";
 import ToolsDetails from "./toolsDeatils/ToolsDetails";
 
 const Tools = () => {
-  const { data, isLoading } = useQuery("tool", async () => {
+  const { data, isLoading, isError } = useQuery("tool", async () => {
     const res = await request({ url: "/tools" });
     return res.data;
   });
   if (isLoading) {
     return <Loader></Loader>;
+  }
+  if (isError) {
+    toast.error(isError?.message);
   }
   // console.log(data);
   const tools = data;

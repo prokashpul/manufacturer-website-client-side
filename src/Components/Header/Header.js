@@ -14,6 +14,7 @@ const Header = ({ children }) => {
     localStorage.removeItem("token");
     navigate("/");
   };
+
   const imgUrl = "https://i.ibb.co/7jMg9Xq/circled-user.png";
   return (
     <div className="drawer drawer-end sticky top-0 z-50">

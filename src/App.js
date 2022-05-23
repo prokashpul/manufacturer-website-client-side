@@ -8,6 +8,7 @@ import { PublicRoutes } from "./Routes/PublicRoutes";
 import "react-toastify/dist/ReactToastify.css";
 import RequiredAuth from "./Components/RequiredAuth/RequiredAuth";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import Purchase from "./Pages/Purchase/Purchase";
 
 function App() {
   return (
@@ -41,6 +42,14 @@ function App() {
               ></Route>
             ))}
           </Route>
+          <Route
+            path="/purchase/:id"
+            element={
+              <RequiredAuth>
+                <Purchase></Purchase>
+              </RequiredAuth>
+            }
+          ></Route>
           <Route path="*" element={<Error></Error>}></Route>
         </Routes>
         <Footer></Footer>

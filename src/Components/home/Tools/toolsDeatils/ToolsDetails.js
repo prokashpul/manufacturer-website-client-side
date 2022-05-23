@@ -5,7 +5,7 @@ const ToolsDetails = ({ tool }) => {
   const navigate = useNavigate();
   const { name, dic, image, price, minOrder, quantity, _id } = tool || {};
   const handelButton = (id) => {
-    navigate(`/product/${id}`);
+    navigate(`/purchase/${id}`);
   };
   return (
     <div>

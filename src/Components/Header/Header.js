@@ -114,7 +114,12 @@ const Header = ({ children }) => {
               {user ? (
                 <>
                   <li>
-                    <button onClick={() => handelSinOut()}>Sin Out</button>
+                    <button
+                      className="uppercase"
+                      onClick={() => handelSinOut()}
+                    >
+                      Sin Out
+                    </button>
                   </li>
 
                   <div className="flex-none">

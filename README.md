@@ -17,3 +17,4 @@
 > - React-query
 > - Axios
 > - React-countup
+> - sweetalert2

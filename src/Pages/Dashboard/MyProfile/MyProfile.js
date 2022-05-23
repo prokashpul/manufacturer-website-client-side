@@ -21,7 +21,6 @@ const MyProfile = () => {
     toast.error(isError?.message);
   }
   Title(data.name, "Profile");
-  console.log(data);
   return (
     <div>
       <div className="md:w-[780px] w-[95%] mx-auto">

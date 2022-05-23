@@ -14,7 +14,7 @@ const Banner = () => {
   return (
     <div className="md:h-[78vh] h-[65vh] overflow-hidden bg-gray-200">
       <Slider {...settings}>
-        <div className="md:h-[75vh] 75vhh-[65vh] ">
+        <div className="md:h-[75vh] h-[65vh] ">
           <div className="grid text-center md:text-left md:grid-cols-2 items-center lg:w-[1080px] w-[95%] mx-auto md:p-10 p-4">
             <div className="md:p-5">
               <h3 className="font-bold text-primary  text-5xl ">

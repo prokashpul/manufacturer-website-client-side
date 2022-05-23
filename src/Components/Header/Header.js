@@ -21,7 +21,7 @@ const Header = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
-        <div className="w-full navbar bg-secondary">
+        <div className="w-full navbar bg-secondary sticky top-0 z-50">
           <div className="flex-1 px-2 mx-2 font-bold md:text-3xl text-2xl text-accent ">
             Pro<span className="text-primary">Electronic</span>{" "}
           </div>

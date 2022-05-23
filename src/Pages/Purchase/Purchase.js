@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
@@ -21,7 +20,7 @@ const Purchase = () => {
     isError,
   } = useQuery("tools", async () => {
     const res = await request({ url: `/purchase/${id}` });
-    return res.data;
+    return res?.data;
   });
   if (isLoading) {
     return <Loader></Loader>;

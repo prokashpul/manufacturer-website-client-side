@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const client = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "https://electric-tools-server.herokuapp.com/",
 });
 
 export const request = ({ ...options }) => {

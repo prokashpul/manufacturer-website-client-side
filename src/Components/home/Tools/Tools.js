@@ -12,7 +12,7 @@ const Tools = () => {
   if (isLoading) {
     return <Loader></Loader>;
   }
-  console.log(data);
+  // console.log(data);
   const tools = data;
   return (
     <div className="md:max-w-[1080px] w-[95%] mx-auto my-10">

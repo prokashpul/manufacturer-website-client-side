@@ -7,13 +7,11 @@ const useToken = (user) => {
     const email = user?.user?.email;
 
     if (email) {
-      axios
-        .post(`https://electric-tools-server.herokuapp.com/login`)
-        .then((res) => {
-          const token = res?.data?.accessToken;
-          localStorage.setItem("token", token);
-          setToken(token);
-        });
+      axios.post(`http://localhost:5000/login`).then((res) => {
+        const token = res?.data?.accessToken;
+        localStorage.setItem("token", token);
+        setToken(token);
+      });
     }
   }, [user?.user?.email]);
   return [token];

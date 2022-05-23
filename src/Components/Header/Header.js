@@ -17,7 +17,7 @@ const Header = ({ children }) => {
 
   const imgUrl = "https://i.ibb.co/7jMg9Xq/circled-user.png";
   return (
-    <div className="drawer drawer-end sticky top-0 z-50">
+    <div className="drawer overflow-none drawer-end ">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}

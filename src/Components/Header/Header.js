@@ -11,6 +11,7 @@ const Header = ({ children }) => {
   //sinOut button handel
   const handelSinOut = () => {
     signOut(auth);
+    localStorage.removeItem("token");
     navigate("/");
   };
   const imgUrl = "https://i.ibb.co/7jMg9Xq/circled-user.png";

@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
 import useToken from "../../../Hooks/useToken";
+import { request } from "../../../Utilities/AxiousUtilities/AxiousUtilities";
 import Loader from "../../../Utilities/Loader/Loader";
 import Title from "../../../Utilities/PathTitle/PathTitle";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -37,6 +38,18 @@ const Login = () => {
   };
 
   if (token) {
+    const email = user?.user?.email;
+    const name = user?.user?.displayName;
+    console.log(user);
+    const userUp = async () => {
+      const res = await request({
+        url: `/user/${email}`,
+        method: "put",
+        data: { email, name },
+      });
+      return res.data;
+    };
+    userUp();
     navigate(from, { replace: true });
   }
 

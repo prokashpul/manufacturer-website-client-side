@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
 import useToken from "../../../Hooks/useToken";
+import { request } from "../../../Utilities/AxiousUtilities/AxiousUtilities";
 import Loader from "../../../Utilities/Loader/Loader";
 import Title from "../../../Utilities/PathTitle/PathTitle";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -31,12 +32,27 @@ const Registration = () => {
     return <Loader></Loader>;
   }
   const onSubmit = async (data) => {
-    await createUserWithEmailAndPassword(data?.email, data?.password);
+    const email = data?.email;
+    const password = data?.password;
+    await createUserWithEmailAndPassword(email, password);
     const name = data?.name;
     await updateProfile({ displayName: name });
     reset();
   };
+
   if (token) {
+    const email = user?.user?.email;
+    const name = user?.user?.displayName;
+    console.log(user);
+    const userUp = async () => {
+      const res = await request({
+        url: `/user/${email}`,
+        method: "put",
+        data: { email, name },
+      });
+      return res.data;
+    };
+    userUp();
     navigate(from, { replace: true });
   }
   if (error || upError) {

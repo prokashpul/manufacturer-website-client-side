@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
 import useToken from "../../../Hooks/useToken";
+import { request } from "../../../Utilities/AxiousUtilities/AxiousUtilities";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -18,6 +19,18 @@ const SocialLogin = () => {
     toast.error(error.message);
   }
   if (token) {
+    const email = user?.user?.email;
+    const name = user?.user?.displayName;
+    console.log(user);
+    const userUp = async () => {
+      const res = await request({
+        url: `/user/${email}`,
+        method: "put",
+        data: { email, name },
+      });
+      return res.data;
+    };
+    userUp();
     navigate(from, { replace: true });
   }
   return (

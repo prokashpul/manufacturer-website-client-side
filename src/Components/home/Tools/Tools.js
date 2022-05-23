@@ -1,4 +1,3 @@
-import axios from "axios";
 import React from "react";
 import { useQuery } from "react-query";
 import { request } from "../../../Utilities/AxiousUtilities/AxiousUtilities";

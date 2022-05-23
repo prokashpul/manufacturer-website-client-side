@@ -9,22 +9,22 @@ const ToolsDetails = ({ tool }) => {
   };
   return (
     <div>
-      <div class="card bg-base-100 shadow-xl">
+      <div className="card bg-base-100 shadow-xl">
         <figure>
           <img className="h-[250px]" src={image} alt={name} />
         </figure>
-        <div class="card-body">
-          <h2 class="card-title">
+        <div className="card-body">
+          <h2 className="card-title">
             {name.length > 30 ? name.slice(0, 30) : name}
           </h2>
           {dic.length > 100 ? <p> {dic.slice(0, 100)} ...</p> : <p> dic</p>}
           <p>Per unit price: $ {price}</p>
           <p>Stock : {quantity}</p>
           <p>Minimum Order : {minOrder}</p>
-          <div class="card-actions justify-start mt-5">
+          <div className="card-actions justify-start mt-5">
             <button
               onClick={() => handelButton(_id)}
-              class="btn btn-primary text-accent"
+              className="btn btn-primary text-accent"
             >
               Order Now
             </button>

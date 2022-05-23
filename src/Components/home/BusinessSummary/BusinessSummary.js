@@ -5,10 +5,10 @@ const BusinessSummary = () => {
   return (
     <div className="md:max-w-[1080px] w-[95%] mx-auto my-10">
       <h2 className="font-bold text-4xl text-center my-10">
-        Our Business summary{" "}
+        Our Business summary
       </h2>
-      <div className="stats shadow w-full border rounded-xl text-center">
-        <div className="stat">
+      <div className="flex md:flex-row flex-col md:border gap-5 md:gap-0 shadow w-full overflow-hidden rounded-xl text-center">
+        <div className="stat shadow-xl">
           <div className="stat-figure text-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ const BusinessSummary = () => {
           </div>
         </div>
 
-        <div className="stat">
+        <div className="stat shadow-xl">
           <div className="stat-figure text-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ const BusinessSummary = () => {
           </div>
         </div>
 
-        <div className="stat">
+        <div className="stat shadow-xl">
           <div className="stat-figure text-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"

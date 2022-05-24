@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 
 const BusinessSummary = () => {
   return (
-    <div className="md:max-w-[1080px] w-[95%] mx-auto my-10">
+    <div className="md:max-w-[1080px] w-[95%] mx-auto my-20">
       <h2 className="font-bold text-4xl text-center my-10">
         Our Business summary
       </h2>

@@ -12,14 +12,14 @@ const Banner = () => {
     pauseOnHover: true,
   };
   return (
-    <div className="lg:h-[78vh] h-[50vh] overflow-hidden bg-gray-200">
+    <div className="lg:h-[78vh] md:h-[50vh] h-[60vh] overflow-hidden bg-gray-200">
       <Slider {...settings}>
         <div className="md:h-[75vh] h-[55vh] ">
           <div className="grid text-center md:text-left md:grid-cols-2 items-center lg:w-[1080px] w-[95%] mx-auto md:p-10 p-4">
             <div className="md:p-5">
-              <h3 className="font-bold text-primary text-xl lg:text-5xl ">
-                <span className="text-secondary">Hundreds </span>
-                Professional Tools
+              <h3 className="font-bold text-primary  text-3xl text-5xl ">
+                <span className="text-secondary">Hundreds</span> Professional
+                Tools
               </h3>
               <p className="md:md:my-5 my-3">
                 Electricians will use an electric drill to help them install new
@@ -42,7 +42,7 @@ const Banner = () => {
         <div className="md:h-[75vh] h-[55vh] ">
           <div className="grid text-center md:text-left md:grid-cols-2 items-center max-w-[1080px] w-[95%] mx-auto md:p-10 p-4">
             <div className="md:p-5">
-              <h3 className="font-bold text-primary  text-5xl ">
+              <h3 className="font-bold text-primary  text-3xl text-5xl ">
                 <span className="text-secondary">Big choice of</span> Plumbing
                 products
               </h3>
@@ -67,7 +67,7 @@ const Banner = () => {
         <div className="md:h-[75vh] h-[55vh] ">
           <div className="grid text-center md:text-left md:grid-cols-2 items-center max-w-[1080px] w-[95%] mx-auto md:p-10 p-4">
             <div className="md:p-5">
-              <h3 className="font-bold text-primary  text-5xl ">
+              <h3 className="font-bold text-primary text-3xl text-5xl ">
                 <span className="text-secondary">Screwdrivers </span>
                 Professional Tools
               </h3>

@@ -7,7 +7,7 @@ const ToolsDetails = ({ tool }) => {
   const handelButton = (id) => {
     navigate(`/purchase/${id}`);
   };
-  console.log(tool);
+
   return (
     <div>
       <div className="card bg-base-100 shadow-xl">

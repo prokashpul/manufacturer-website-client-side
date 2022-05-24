@@ -19,3 +19,4 @@
 > - Axios
 > - React-countup
 > - sweetalert2
+> - react-rating-stars-component

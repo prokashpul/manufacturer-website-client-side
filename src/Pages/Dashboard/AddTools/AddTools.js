@@ -68,7 +68,7 @@ const AddTools = () => {
               <textarea
                 type="text"
                 placeholder="Description"
-                className="input input-bordered"
+                className="input input-bordered h-24"
                 {...register("dis", {
                   max: 200,
                   required:

@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
 import { request } from "../../../Utilities/AxiousUtilities/AxiousUtilities";
@@ -29,9 +30,9 @@ const MyProfile = () => {
             <div className="md:ml-16 py-5 text-center md:text-left">
               <h2 className="md:text-5xl text-3xl font-bold"> </h2>
             </div>
-            <div className="md:w-[150px] md:h-[150px] w-[100px] h-[100px]  relative md:mb-[-210px] md:mr-[70px]  p-1 md:bg-transparent">
+            <div className="md:w-[150px] md:h-[150px] w-[100px] h-[100px]  relative md:mb-[-195px] md:mr-[560px]  p-1 md:bg-transparent">
               <img
-                className="w-full h-full shadow-lg"
+                className="w-full h-full shadow-lg border-8 rounded-full"
                 src={
                   data?.image
                     ? data?.image
@@ -42,15 +43,17 @@ const MyProfile = () => {
             </div>
           </div>
           <div className="md:col-span-2 ... h-[500px] p-5">
-            <div>
+            <div className="md:ml-16 md:mt-10">
               <div className="flex gap-2 items-center">
                 <h2 className="md:text-4xl text-2xl font-bold mt-5 uppercase">
                   {data?.name}
                 </h2>
+
                 <span className="font-bold text-blue-700 mt-5">
-                  ( Edit Profile )
+                  <Link to="/dashboard/edit-profile">( Edit Profile )</Link>
                 </span>
               </div>
+              <p>{data?.about}</p>
               <div className="divider bg-primary md:bg-blue-300 h-1   md:w-[200px]"></div>
               <ul>
                 <li className="flex gap-3 items-start ">

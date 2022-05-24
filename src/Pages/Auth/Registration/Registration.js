@@ -43,7 +43,6 @@ const Registration = () => {
   if (token) {
     const email = user?.user?.email;
     const name = user?.user?.displayName;
-    console.log(user);
     const userUp = async () => {
       const res = await request({
         url: `/user/${email}`,

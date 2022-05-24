@@ -112,7 +112,7 @@ const EditProfile = () => {
             </div>
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-primary text-accent">
-                UPdate
+                Update
               </button>
             </div>
           </form>

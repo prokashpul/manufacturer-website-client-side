@@ -7,6 +7,7 @@ const ToolsDetails = ({ tool }) => {
   const handelButton = (id) => {
     navigate(`/purchase/${id}`);
   };
+  console.log(tool);
   return (
     <div>
       <div className="card bg-base-100 shadow-xl">
@@ -14,10 +15,8 @@ const ToolsDetails = ({ tool }) => {
           <img className="h-[250px]" src={image} alt={name} />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">
-            {name.length > 30 ? name.slice(0, 30) : name}
-          </h2>
-          {dic.length > 100 ? <p> {dic.slice(0, 100)} ...</p> : <p> dic</p>}
+          <h2 className="card-title">{name && name}</h2>
+          {<p>{dic?.slice(0, 100)}</p>}
           <p>Per unit price: $ {price}</p>
           <p>Stock : {quantity}</p>
           <p>Minimum Order : {minOrder}</p>

@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 import { request } from "../../../Utilities/AxiousUtilities/AxiousUtilities";
 import Loader from "../../../Utilities/Loader/Loader";
 import Title from "../../../Utilities/PathTitle/PathTitle";
-import UserModal from "../Modal/UserModal";
 
 const AllUser = () => {
   Title("All user");
@@ -82,7 +81,7 @@ const AllUser = () => {
               </tr>
             </thead>
             <tbody>
-              {data?.map((user, index) => (
+              {[...data]?.reverse()?.map((user, index) => (
                 <tr key={index}>
                   <th>{index + 1}</th>
                   <td>

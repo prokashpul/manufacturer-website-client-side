@@ -1,3 +1,4 @@
+import AddTools from "../Pages/Dashboard/AddTools/AddTools";
 import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 import EditProfile from "../Pages/Dashboard/EditeProfile/EditeProfile";
 
@@ -11,6 +12,7 @@ export const PrivetRoutes = [
   { path: "/dashboard/my-order", name: "My Orders", Component: MyOrders },
   { path: "/dashboard/all-user", name: "All User", Component: AllUser },
   { path: "/dashboard/edit-profile", name: "All User", Component: EditProfile },
+  { path: "/dashboard/add-tools", name: "All User", Component: AddTools },
   {
     path: "/dashboard/manage-all-orders",
     name: "Manage All Orders",

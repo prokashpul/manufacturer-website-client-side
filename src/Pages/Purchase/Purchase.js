@@ -28,7 +28,7 @@ const Purchase = () => {
     return res?.data;
   });
 
-  const { name, dic, price, image, quantity, _id } = tool || {};
+  const { name, dic, price, image, quantity, _id, minOrder } = tool || {};
   Title(name);
   const userEmail = user.email;
   //Load tool data
@@ -52,7 +52,7 @@ const Purchase = () => {
     console.log(data);
     const userUp = async () => {
       const userName = user?.displayName;
-      const productName = tool?.displayName;
+      const productName = tool?.name;
       const email = user?.email;
       const image = tool?.image;
       const price = tool?.price;
@@ -115,14 +115,14 @@ const Purchase = () => {
             <p>{dic}</p>
             <h4 className="text-lg font-semibold">Per unit price: ${price}</h4>
             <h4 className="font-semibold">In Stock: {quantity}</h4>
-            <h4 className=" font-semibold">Minimum Order: 100 unit</h4>
+            <h4 className=" font-semibold">Minimum Order: {minOrder} unit</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control">
                 <input
                   type="number"
                   placeholder="Quantity"
                   className="input input-bordered w-40"
-                  min="100"
+                  min={minOrder}
                   max={quantity}
                   {...register("quantity", {
                     required: "You must specify a quantity field",

@@ -31,6 +31,7 @@ const Purchase = () => {
   const { name, dic, price, image, quantity, _id } = tool || {};
   Title(name);
   const userEmail = user.email;
+  //Load tool data
   const {
     data: userData,
     isLoadingUser,
@@ -73,6 +74,7 @@ const Purchase = () => {
         },
       });
       reset();
+      //put data
       if (res.status === 200) {
         const userUp = async () => {
           const newQuantity = parseInt(tool.quantity) - parseInt(data.quantity);

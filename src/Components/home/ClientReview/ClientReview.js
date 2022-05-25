@@ -8,7 +8,7 @@ const ClientReview = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    fetch("https://electric-tools-server.herokuapp.com/review")
+    fetch("http://localhost:5000/review")
       .then((res) => res.json())
       .then((data) => setReview(data));
     setLoading(false);

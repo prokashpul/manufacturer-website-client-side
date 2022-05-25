@@ -16,7 +16,7 @@ const AddReview = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
 
     const userUp = async () => {
       const dic = data?.dis;

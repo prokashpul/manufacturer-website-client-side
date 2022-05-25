@@ -1,14 +1,18 @@
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import UserInfo from "../../Components/Purchase/UserInfo";
 import { request } from "../../Utilities/AxiousUtilities/AxiousUtilities";
 import Loader from "../../Utilities/Loader/Loader";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Firebase/firebase.init";
+import Title from "../../Utilities/PathTitle/PathTitle";
 
 const Purchase = () => {
   const { id } = useParams();
-
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -23,22 +27,82 @@ const Purchase = () => {
     const res = await request({ url: `/purchase/${id}` });
     return res?.data;
   });
-  if (isLoading) {
+
+  const { name, dic, price, image, quantity, _id } = tool || {};
+  Title(name);
+  const userEmail = user.email;
+  const {
+    data: userData,
+    isLoadingUser,
+    isErrorUse,
+  } = useQuery("user", async () => {
+    const res = await request({ url: `/user/${userEmail}` });
+    return res.data;
+  });
+  if (isLoading || isLoadingUser) {
     return <Loader></Loader>;
   }
-  if (isError) {
+  if (isError || isErrorUse) {
     toast.error(isError?.message);
   }
-  const { name, dic, price, image, quantity, _id } = tool || {};
   //   console.log(tool);
 
   const onSubmit = async (data) => {
     console.log(data);
-    reset();
+    const userUp = async () => {
+      const userName = user?.displayName;
+      const productName = tool?.displayName;
+      const email = user?.email;
+      const image = tool?.image;
+      const price = tool?.price;
+      const quantity = data?.quantity;
+      const totalPrice = price * quantity;
+      const productId = tool?._id;
+      const res = await request({
+        url: `/purchase`,
+        method: "post",
+        data: {
+          image,
+          price,
+          productName,
+          userName,
+          email,
+          quantity,
+          totalPrice,
+          productId,
+        },
+      });
+      reset();
+      if (res.status === 200) {
+        const userUp = async () => {
+          const newQuantity = parseInt(tool.quantity) - parseInt(data.quantity);
+          tool.quantity = newQuantity;
+          const res = await request({
+            url: `/tools/${_id}`,
+            method: "put",
+            data: { tool },
+          });
+          // console.log(tool);
+          // console.log(res.data);
+          return res.data;
+        };
+        userUp();
+
+        toast.success("Order successful");
+        navigate("/dashboard/my-order");
+        return res.data;
+      } else {
+        toast.error("Some thing wrong");
+      }
+    };
+    userUp();
   };
 
   return (
     <div className="py-20 bg-primary">
+      <h2 className="font-extrabold text-3xl text-center my-10">
+        Order Now {name}
+      </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 lg:w-[1080px] w-[95%] mx-auto  shadow-xl">
         <div className=" bg-accent shadow-lg  md:w-50%">
           <figure>
@@ -48,7 +112,7 @@ const Purchase = () => {
             <h2 className="font-extrabold text-3xl">{name}</h2>
             <p>{dic}</p>
             <h4 className="text-lg font-semibold">Per unit price: ${price}</h4>
-            <h4 className="font-semibold">In Stock: ${quantity}</h4>
+            <h4 className="font-semibold">In Stock: {quantity}</h4>
             <h4 className=" font-semibold">Minimum Order: 100 unit</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control">
@@ -57,7 +121,7 @@ const Purchase = () => {
                   placeholder="Quantity"
                   className="input input-bordered w-40"
                   min="100"
-                  max="200"
+                  max={quantity}
                   {...register("quantity", {
                     required: "You must specify a quantity field",
                   })}
@@ -77,12 +141,12 @@ const Purchase = () => {
             </form>
           </div>
         </div>
-        <div className=" bg-accent shadow-lg md:w-50%">
+        <div className=" bg-amber-100 shadow-lg md:w-50%">
           <div className="card-body">
-            <h2 className="md:text-5xl text-4xl text-center my-5 font-bold">
+            <h2 className="md:text-3xl text-2xl text-center my-5 font-bold">
               User Information
             </h2>
-            <UserInfo />
+            <UserInfo userData={userData} />
           </div>
         </div>
       </div>

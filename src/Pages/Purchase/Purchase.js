@@ -59,6 +59,7 @@ const Purchase = () => {
       const quantity = data?.quantity;
       const totalPrice = price * quantity;
       const productId = tool?._id;
+      const payment = "unpaid";
       const res = await request({
         url: `/purchase`,
         method: "post",
@@ -71,6 +72,7 @@ const Purchase = () => {
           quantity,
           totalPrice,
           productId,
+          payment,
         },
       });
       reset();

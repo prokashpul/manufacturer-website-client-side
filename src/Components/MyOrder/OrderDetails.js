@@ -1,7 +1,6 @@
 import React from "react";
 
 const OrderDetails = ({ order, index, cancelOrder }) => {
-  console.log(order, "yes");
   return (
     <>
       <tr>
@@ -32,14 +31,19 @@ const OrderDetails = ({ order, index, cancelOrder }) => {
           {order.payment === "cancel" ? (
             <p className="text-red-500">Cancel order</p>
           ) : (
-            <button onClick className="btn btn-primary btn-xs text-accent">
-              Pay
+            <button
+              disabled={order?.payment === "paid"}
+              onClick
+              className="btn btn-primary btn-xs text-accent"
+            >
+              {order.payment === "unpaid" ? <>pay</> : <> paid</>}
+              {order.shipped === "shipped" ? <> shipped</> : <> Pandering</>}
             </button>
           )}
         </td>
         <td>
           <button
-            disabled={order?.payment === "cancel"}
+            disabled={order?.payment === "cancel" || order?.payment === "paid"}
             onClick={() => cancelOrder(order?._id)}
             className="btn bg-red-500 btn-xs text-accent"
           >

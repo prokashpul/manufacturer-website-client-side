@@ -28,7 +28,7 @@ const MyOrders = () => {
     toast.error(isError?.message);
   }
   Title("My Order");
-  console.log(orders);
+  // console.log(orders);
   const cancelOrder = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -40,8 +40,9 @@ const MyOrders = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await request({
-          url: `/order/cancel/${id}`,
+          url: `/order/${id}`,
           method: "put",
+          data: { payment: "cancel" },
         });
         toast.success("Order Successfully cancel");
         refetch();

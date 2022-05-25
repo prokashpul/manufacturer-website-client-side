@@ -1,6 +1,6 @@
 # Pro Electric Tools Manufacturer Information :
 
-> - Live Site Link : https://electric-tools-manufacturer.web.app
+> - Live Site Link : https://electric-tools-server.herokuapp.com
 > - server side github : https://github.com/programming-hero-web-course1/manufacturer-website-server-side-prokashpul
 > - heroku server side - https://electric-tools-server.herokuapp.com
 

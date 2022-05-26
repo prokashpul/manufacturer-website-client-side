@@ -202,30 +202,32 @@ const Header = ({ children }) => {
               Portfolio
             </NavLink>
           </li>
-          <li>
-            <NavLink className="rounded-lg text-secondary" to="/dashboard">
-              Dashboard
-            </NavLink>
-          </li>
 
           {user ? (
-            <li>
-              <button
-                className="text-secondary uppercase"
-                onClick={() => handelSinOut()}
-              >
-                Sin Out
-              </button>
-            </li>
+            <>
+              <li>
+                <NavLink className="rounded-lg text-secondary" to="/dashboard">
+                  Dashboard
+                </NavLink>
+              </li>
+              <li>
+                <button
+                  className="text-secondary uppercase"
+                  onClick={() => handelSinOut()}
+                >
+                  Sin Out
+                </button>
+              </li>
+            </>
           ) : (
             <>
               <li>
-                <NavLink className="rounded-lg text-accent" to="/login">
+                <NavLink className="rounded-lg text-secondary" to="/login">
                   Login
                 </NavLink>
               </li>
               <li>
-                <NavLink className="rounded-lg text-accent" to="/sin-up">
+                <NavLink className="rounded-lg text-secondary" to="/sin-up">
                   Sin up
                 </NavLink>
               </li>

@@ -6,7 +6,7 @@ const ReviewDetail = ({ rev }) => {
   const { dic, image, review, name } = rev || {};
   const reviewStar = {
     size: 30,
-    value: review,
+    value: parseInt(review),
     edit: false,
   };
   return (

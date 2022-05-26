@@ -50,6 +50,9 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/all-user">All User</NavLink>
               </li>
+              <li>
+                <NavLink to="/dashboard/add-blog">Wright Blog</NavLink>
+              </li>
             </>
           )}
         </ul>

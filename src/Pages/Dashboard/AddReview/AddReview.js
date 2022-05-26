@@ -80,9 +80,9 @@ const AddReview = () => {
                     required: "You must specify a Review Rate field",
                   })}
                 />
-                {errors.price && (
+                {errors.review && (
                   <span className="mt-1 text-error">
-                    {errors.price.message}
+                    {errors.review.message}
                   </span>
                 )}
               </div>

@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const OrderDetails = ({ order, index, cancelOrder }) => {
+  const navigate = useNavigate();
   return (
     <>
       <tr>
@@ -33,7 +35,7 @@ const OrderDetails = ({ order, index, cancelOrder }) => {
           ) : (
             <button
               disabled={order?.payment === "paid"}
-              onClick
+              onClick={() => navigate(`/dashboard/payment/${order?._id}`)}
               className="btn btn-primary btn-xs text-accent"
             >
               {order.payment === "unpaid" ? <>pay</> : <> paid</>}

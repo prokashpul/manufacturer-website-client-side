@@ -15,6 +15,7 @@
 > - Paunches router ar proceed only buy login user
 > - admin cane also add new admin and order placement
 > - user can update his.her profile update
+> - stripe card payment system
 
 ## Technology Used ( Packages Install )
 
@@ -32,3 +33,4 @@
 > - React-countup
 > - sweetalert2
 > - react-rating-stars-component
+> - @stripe/react-stripe-js @stripe/stripe-js

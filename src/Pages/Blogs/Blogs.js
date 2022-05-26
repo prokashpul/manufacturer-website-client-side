@@ -13,7 +13,7 @@ const Blogs = () => {
     isError,
   } = useQuery("blogs", async () => {
     const res = await request({ url: `/blogs` });
-    return res.data;
+    return res?.data;
   });
   if (isLoading) {
     return <Loader></Loader>;

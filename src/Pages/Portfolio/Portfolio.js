@@ -68,7 +68,7 @@ const Portfolio = () => {
               <div className="my-5">
                 <strong> Warehouse Management :</strong>
                 <a
-                  class="text-green-500 font-bold"
+                  className="text-green-500 font-bold"
                   href="https://webcarmanager.web.app/"
                 >
                   {" "}
@@ -76,14 +76,14 @@ const Portfolio = () => {
                 </a>{" "}
                 |
                 <a
-                  class="text-green-500 font-bold"
+                  className="text-green-500 font-bold"
                   href="https://github.com/prokashpul/car-warehouse-management-client-side"
                 >
                   Github(client)
                 </a>
                 |
                 <a
-                  class="text-green-500 font-bold"
+                  className="text-green-500 font-bold"
                   href="https://github.com/prokashpul/cr-warehouse-management-server-side"
                 >
                   Github(server)
@@ -110,14 +110,14 @@ const Portfolio = () => {
               <div className="my-5">
                 <strong>Independent service provider: </strong>
                 <a
-                  class="text-green-500 font-bold"
+                  className="text-green-500 font-bold"
                   href="https://proweb-wedding-photographer.web.app/"
                 >
                   Live View
                 </a>
                 |
                 <a
-                  class="text-green-500 font-bold"
+                  className="text-green-500 font-bold"
                   href="https://github.com/prokashpul/independent-service-provider"
                 >
                   Github

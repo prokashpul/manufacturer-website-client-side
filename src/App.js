@@ -14,6 +14,7 @@ import { AdminRoutes } from "./Routes/AdminRouter";
 import EditProfile from "./Pages/Dashboard/EditeProfile/EditeProfile";
 import MyProfile from "./Pages/Dashboard/MyProfile/MyProfile";
 import RequireAdmin from "./Utilities/AdminUtils/AdminUtils";
+import GetPayment from "./Pages/Dashboard/GetPayment/GetPayment";
 
 function App() {
   const [admin] = useAdmin();
@@ -66,6 +67,11 @@ function App() {
               element={<EditProfile></EditProfile>}
             ></Route>
             <Route
+              path="/dashboard/payment/:id"
+              element={<GetPayment />}
+            ></Route>
+
+            <Route
               path="/dashboard/my-profile"
               element={<MyProfile></MyProfile>}
             ></Route>
@@ -79,6 +85,7 @@ function App() {
               </RequiredAuth>
             }
           ></Route>
+
           <Route path="*" element={<Error></Error>}></Route>
         </Routes>
         <Footer></Footer>

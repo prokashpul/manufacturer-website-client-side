@@ -3,6 +3,7 @@ import Banner from "../../Components/home/Banner/Banner";
 import BusinessSummary from "../../Components/home/BusinessSummary/BusinessSummary";
 import ClientReview from "../../Components/home/ClientReview/ClientReview";
 import OurServices from "../../Components/home/OurServices/OurServices";
+import Subscribe from "../../Components/home/subscribe/Subscribe";
 import Tools from "../../Components/home/Tools/Tools";
 import Title from "../../Utilities/PathTitle/PathTitle";
 
@@ -15,6 +16,7 @@ const Home = () => {
       <Tools></Tools>
       <BusinessSummary></BusinessSummary>
       <ClientReview></ClientReview>
+      <Subscribe></Subscribe>
     </div>
   );
 };

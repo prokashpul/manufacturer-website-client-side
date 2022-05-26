@@ -1,12 +1,16 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
+import { request } from "../../../Utilities/AxiousUtilities/AxiousUtilities";
 import Title from "../../../Utilities/PathTitle/PathTitle";
 
 const AddBlog = () => {
   Title("Add Reviews");
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -14,8 +18,27 @@ const AddBlog = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data, user);
-    reset();
+    const userUp = async () => {
+      const name = user?.displayName;
+      const dic = data?.dis;
+      const title = data?.title;
+      const email = user?.email;
+      const res = await request({
+        url: `/blogs/`,
+        method: "post",
+        data: { name, dic, email, title },
+      });
+      reset();
+      if (res.data) {
+        toast.success("Add Posts successful");
+        navigate("/blogs");
+        return res.data;
+      } else {
+        toast.error("Error");
+        return;
+      }
+    };
+    userUp();
   };
   return (
     <div className="hero my-10 ">
@@ -52,9 +75,8 @@ const AddBlog = () => {
                 placeholder="Description"
                 className="input input-bordered h-24"
                 {...register("dis", {
-                  max: 200,
                   required:
-                    "You must specify a Description less than 200 letter field",
+                    "You must specify a Description less than 1000 letter field",
                 })}
               />
               {errors.dis && (

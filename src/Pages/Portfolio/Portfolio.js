@@ -26,7 +26,7 @@ const Portfolio = () => {
               />
             </div>
           </div>
-          <div className="md:col-span-2 ... h-[500px] p-5">
+          <div className="md:col-span-2 ...  p-5">
             <div className=" block md:hidden">
               <Contract></Contract>
             </div>
@@ -61,6 +61,87 @@ const Portfolio = () => {
                   ChromeDevToo ,Netlify ,MongoDB, Figma , Postman
                 </li>
               </ul>
+              <h2 className="md:text-4xl text-2xl font-bold mt-5 uppercase">
+                PROJECTS :
+              </h2>
+              <div className="divider bg-primary md:bg-blue-300 h-1   md:w-[200px]"></div>
+              <div className="my-5">
+                <strong> Warehouse Management :</strong>
+                <a
+                  class="text-green-500 font-bold"
+                  href="https://webcarmanager.web.app/"
+                >
+                  {" "}
+                  Live View
+                </a>{" "}
+                |
+                <a
+                  class="text-green-500 font-bold"
+                  href="https://github.com/prokashpul/car-warehouse-management-client-side"
+                >
+                  Github(client)
+                </a>
+                |
+                <a
+                  class="text-green-500 font-bold"
+                  href="https://github.com/prokashpul/cr-warehouse-management-server-side"
+                >
+                  Github(server)
+                </a>
+                <ul>
+                  <li>
+                    1. Users and admins can log in and register to the website
+                    using the firebase authentication system and reset the
+                    password.
+                  </li>
+                  <li>
+                    2. Admin and user can add new items, update items, delete
+                    items and add posts. Without a login user can’t view private
+                    routes and the dashboard.
+                  </li>
+                  <li>
+                    3. Fully responsive, it built this website using
+                    react,nodeJs, row CSS,react-router and many ReactJs
+                    components library Technology used: React router,React
+                    form,Firebase,ASO,React table, MongoDB etc.
+                  </li>
+                </ul>
+              </div>
+              <div className="my-5">
+                <strong>Independent service provider: </strong>
+                <a
+                  class="text-green-500 font-bold"
+                  href="https://proweb-wedding-photographer.web.app/"
+                >
+                  Live View
+                </a>
+                |
+                <a
+                  class="text-green-500 font-bold"
+                  href="https://github.com/prokashpul/independent-service-provider"
+                >
+                  Github
+                </a>
+                <ul>
+                  <li>
+                    1. Users and admins can log in and register to the website
+                    using the firebase authentication system and reset the
+                    password.
+                  </li>
+                  <li>
+                    2. Without a login, the user can not view private routes.
+                  </li>
+                  <li>
+                    3. Fully responsive, it built this website using react, row
+                    CSS, react-router and many ReactJs components library.
+                  </li>
+                  <li>
+                    <span className="font-bold">Technology used:</span>
+                    Technology used: React Router, React hook form,
+                    Firebase,Css,React icon etc.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className="md:col-span-1 ... bg-primary md:pt-32 p-5 hidden md:block">

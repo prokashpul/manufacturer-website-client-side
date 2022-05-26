@@ -14,8 +14,6 @@ const AddTools = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-
     const userUp = async () => {
       const name = data?.name;
       const dic = data?.dis;
@@ -34,6 +32,8 @@ const AddTools = () => {
         Navigate("/dashboard/my-profile");
         return res.data;
       } else {
+        toast.error("Error");
+        return;
       }
     };
     userUp();

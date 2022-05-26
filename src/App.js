@@ -9,8 +9,14 @@ import "react-toastify/dist/ReactToastify.css";
 import RequiredAuth from "./Components/RequiredAuth/RequiredAuth";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Purchase from "./Pages/Purchase/Purchase";
+import useAdmin from "./Hooks/useAdmin";
+import { AdminRoutes } from "./Routes/AdminRouter";
+import EditProfile from "./Pages/Dashboard/EditeProfile/EditeProfile";
+import MyProfile from "./Pages/Dashboard/MyProfile/MyProfile";
 
 function App() {
+  const [admin] = useAdmin();
+  console.log(admin);
   return (
     <>
       <Header>
@@ -36,11 +42,31 @@ function App() {
                 path={path}
                 element={
                   <RequiredAuth>
-                    <Component></Component>
+                    {!admin && <Component></Component>}
                   </RequiredAuth>
                 }
               ></Route>
             ))}
+            {AdminRoutes.map(({ path, Component }, index) => (
+              <Route
+                key={index}
+                path={path}
+                element={
+                  <RequiredAuth>
+                    {admin && <Component></Component>}
+                  </RequiredAuth>
+                }
+              ></Route>
+            ))}
+            <Route
+              path="/dashboard/edit-profile"
+              element={<EditProfile></EditProfile>}
+            ></Route>
+            <Route
+              path="/dashboard/my-profile"
+              element={<MyProfile></MyProfile>}
+            ></Route>
+            <Route path="/dashboard" element={<MyProfile></MyProfile>}></Route>
           </Route>
           <Route
             path="/purchase/:id"

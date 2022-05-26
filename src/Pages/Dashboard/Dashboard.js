@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../../Hooks/useAdmin";
 import Title from "../../Utilities/PathTitle/PathTitle";
 
 const Dashboard = () => {
   Title("Dashboard");
+  const [admin] = useAdmin();
   return (
     <div className="drawer overflow-visible drawer-mobile ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -19,23 +21,32 @@ const Dashboard = () => {
           <li>
             <NavLink to="/dashboard/my-profile">My Profile</NavLink>
           </li>
-          <li>
-            <NavLink to="/dashboard/my-order">My Order</NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/add-review">Add Review</NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/manage-all-orders">
-              Manage All Orders
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/add-tools">Add Tools</NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/all-user">All User</NavLink>
-          </li>
+          {!admin && (
+            <>
+              {" "}
+              <li>
+                <NavLink to="/dashboard/my-order">My Order</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/add-review">Add Review</NavLink>
+              </li>
+            </>
+          )}
+          {admin && (
+            <>
+              <li>
+                <NavLink to="/dashboard/manage-all-orders">
+                  Manage All Orders
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/add-tools">Add Tools</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/all-user">All User</NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>

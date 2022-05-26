@@ -17,7 +17,7 @@ const ManageAllTools = () => {
   } = useQuery("tools", async () => {
     const res = await request({ url: `manageTools` });
 
-    return res.data;
+    return res?.data;
   });
   if (isLoading) {
     return <Loader></Loader>;
@@ -40,7 +40,7 @@ const ManageAllTools = () => {
           method: "delete",
         });
         refetch();
-        return res.data;
+        return res?.data;
       }
     });
   };

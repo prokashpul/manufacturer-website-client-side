@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
   Title("Manage All Orders");
   const { data, isLoading, isError, refetch } = useQuery("order", async () => {
     const res = await request({ url: `/all-orders` });
-    return res.data;
+    return res?.data;
   });
   if (isLoading) {
     return <Loader></Loader>;
@@ -20,7 +20,7 @@ const ManageAllOrders = () => {
     toast.error(isError?.message);
   }
   const orderShipped = (id) => {
-    console.log(id);
+    // console.log(id);
     Swal.fire({
       title: "Are you sure?",
       icon: "warning",
@@ -37,7 +37,7 @@ const ManageAllOrders = () => {
         });
         toast.success("Order Successfully Shipped");
         refetch();
-        return res.data;
+        return res?.data;
       }
     });
   };

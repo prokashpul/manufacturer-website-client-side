@@ -37,7 +37,7 @@ const AllUser = () => {
         });
 
         refetch();
-        return res.data;
+        return res?.data;
       }
     });
   };

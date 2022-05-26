@@ -48,7 +48,7 @@ const EditProfile = () => {
     <div className="hero my-10 ">
       <div className="card flex-shrink-0 w-[95%] md:w-full max-w-sm shadow-2xl bg-base-100">
         <h2 className="text-center font-bold text-3xl mt-5">
-          Hi ! <span className="text-primary"></span> {data.name}
+          Hi ! <span className="text-primary"></span> {data?.name}
         </h2>
         <div className="card-body">
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -58,7 +58,7 @@ const EditProfile = () => {
               </label>
               <input
                 type="text"
-                defaultValue={data.name}
+                defaultValue={data?.name}
                 disabled
                 className="input input-bordered"
                 {...register("name")}
@@ -70,7 +70,7 @@ const EditProfile = () => {
               </label>
               <input
                 type="email"
-                defaultValue={data.email}
+                defaultValue={data?.email}
                 disabled
                 className="input input-bordered"
                 {...register("email")}

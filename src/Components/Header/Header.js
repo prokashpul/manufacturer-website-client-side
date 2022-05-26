@@ -43,7 +43,10 @@ const Header = ({ children }) => {
             </label>
           </div>
           <div className="flex-1 px-2 mx-2 font-bold md:text-3xl text-2xl text-accent ">
-            Pro<span className="text-primary">Electronic</span>{" "}
+            <NavLink to="/">
+              {" "}
+              Pro<span className="text-primary">Electronic</span>
+            </NavLink>
           </div>
           {pathname.includes("dashboard") && (
             <label
@@ -205,7 +208,7 @@ const Header = ({ children }) => {
             </NavLink>
           </li>
 
-          {user && (
+          {user ? (
             <li>
               <button
                 className="text-secondary uppercase"
@@ -214,6 +217,19 @@ const Header = ({ children }) => {
                 Sin Out
               </button>
             </li>
+          ) : (
+            <>
+              <li>
+                <NavLink className="rounded-lg text-accent" to="/login">
+                  Login
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="rounded-lg text-accent" to="/sin-up">
+                  Sin up
+                </NavLink>
+              </li>
+            </>
           )}
         </ul>
       </div>

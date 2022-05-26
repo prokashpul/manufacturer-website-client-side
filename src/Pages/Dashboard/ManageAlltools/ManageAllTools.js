@@ -34,7 +34,7 @@ const ManageAllTools = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, Remove Admin!",
     }).then(async (result) => {
-      if (result.isConfirmed) {
+      if (result?.isConfirmed) {
         const res = await request({
           url: `/manageTools/delete/${id}`,
           method: "delete",
@@ -66,7 +66,7 @@ const ManageAllTools = () => {
             {[...tools]?.reverse()?.map((tool, index) => (
               <ToolsDetails
                 tool={tool}
-                key={tool._id}
+                key={tool?._id}
                 index={index}
                 deleteTool={deleteTool}
               ></ToolsDetails>

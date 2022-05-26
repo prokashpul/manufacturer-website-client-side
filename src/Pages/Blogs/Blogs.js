@@ -26,7 +26,7 @@ const Blogs = () => {
     <div>
       <h2 className="text-4xl font-bold text-center my-10">My Blogs</h2>
       {[...blogs]?.reverse()?.map((post, index) => (
-        <BlogDetails index={index} post={post} key={post._id}></BlogDetails>
+        <BlogDetails index={index} post={post} key={post?._id}></BlogDetails>
       ))}
     </div>
   );

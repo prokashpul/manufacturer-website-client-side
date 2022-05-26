@@ -75,7 +75,7 @@ const MyOrders = () => {
               {[...orders]?.reverse()?.map((order, index) => (
                 <OrderDetails
                   order={order}
-                  key={order._id}
+                  key={order?._id}
                   index={index}
                   cancelOrder={cancelOrder}
                 ></OrderDetails>

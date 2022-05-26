@@ -1,7 +1,7 @@
 import React from "react";
 
 const ToolsDetails = ({ tool, index, deleteTool }) => {
-  console.log(tool);
+  // console.log(tool);
   return (
     <>
       <tr>

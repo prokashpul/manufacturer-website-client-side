@@ -29,17 +29,19 @@ const Getpayments = () => {
   if (isError) {
     toast.error(isError?.message);
   }
-  Title("My Blogs Q & A ");
+  Title(payments?.productName);
 
-  console.log(payments);
+  // console.log(payments);
   return (
     <div className=" flex flex-col justify-center items-center gap-5">
       {id}
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
-          <small className="text-emerald-500">Hello! {payments.userName}</small>
+          <small className="text-emerald-500">
+            Hello! {payments?.userName}
+          </small>
           <h2 className="card-title">{payments?.productName}</h2>
-          <p>Pay Amount: {payments?.totalPrice}</p>
+          <p>Pay Amount: $ {payments?.totalPrice}</p>
         </div>
       </div>
       <div className="card w-96 bg-base-100 shadow-xl">

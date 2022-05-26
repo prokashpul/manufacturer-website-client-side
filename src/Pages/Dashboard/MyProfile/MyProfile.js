@@ -10,7 +10,7 @@ import Title from "../../../Utilities/PathTitle/PathTitle";
 
 const MyProfile = () => {
   const [user] = useAuthState(auth);
-  const userEmail = user.email;
+  const userEmail = user?.email;
   const { data, isLoading, isError } = useQuery("user", async () => {
     const res = await request({ url: `/user/${userEmail}` });
     return res.data;
@@ -21,7 +21,7 @@ const MyProfile = () => {
   if (isError) {
     toast.error(isError?.message);
   }
-  Title(data.name, "Profile");
+  Title(data?.name, "Profile");
   return (
     <div>
       <div className="md:w-[780px] w-[95%] mx-auto">

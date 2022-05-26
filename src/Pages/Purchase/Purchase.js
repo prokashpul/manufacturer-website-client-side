@@ -8,11 +8,13 @@ import Loader from "../../Utilities/Loader/Loader";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
 import Title from "../../Utilities/PathTitle/PathTitle";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Purchase = () => {
   const { id } = useParams();
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
+  const [admin] = useAdmin();
   const {
     register,
     handleSubmit,
@@ -116,7 +118,9 @@ const Purchase = () => {
             <h2 className="font-extrabold text-3xl">{name}</h2>
             <p>{dic}</p>
             <h4 className="text-lg font-semibold">Per unit price: ${price}</h4>
-            <h4 className="font-semibold">In Stock: {quantity}</h4>
+            <h4 className="font-semibold">
+              In Stock: {quantity <= 0 ? <>stoc out</> : quantity}
+            </h4>
             <h4 className=" font-semibold">Minimum Order: {minOrder} unit</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control">
@@ -138,7 +142,11 @@ const Purchase = () => {
                 )}
               </div>
               <div className="card-actions justify-start mt-5">
-                <button type="submit" className="btn btn-primary text-accent">
+                <button
+                  type="submit"
+                  disabled={quantity <= 0 || admin}
+                  className="btn btn-primary text-accent"
+                >
                   Order Now
                 </button>
               </div>

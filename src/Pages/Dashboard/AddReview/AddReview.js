@@ -32,7 +32,7 @@ const AddReview = () => {
       });
       reset();
       if (res.data) {
-        toast.success("Add tools successful");
+        toast.success("Add review successful");
         // Navigate("/dashboard/");
         return res.data;
       } else {

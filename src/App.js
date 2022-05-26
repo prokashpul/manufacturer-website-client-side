@@ -13,10 +13,11 @@ import useAdmin from "./Hooks/useAdmin";
 import { AdminRoutes } from "./Routes/AdminRouter";
 import EditProfile from "./Pages/Dashboard/EditeProfile/EditeProfile";
 import MyProfile from "./Pages/Dashboard/MyProfile/MyProfile";
+import RequireAdmin from "./Utilities/AdminUtils/AdminUtils";
 
 function App() {
   const [admin] = useAdmin();
-  console.log(admin);
+  // console.log(admin);
   return (
     <>
       <Header>
@@ -53,7 +54,9 @@ function App() {
                 path={path}
                 element={
                   <RequiredAuth>
-                    {admin && <Component></Component>}
+                    <RequireAdmin>
+                      {admin && <Component></Component>}
+                    </RequireAdmin>
                   </RequiredAuth>
                 }
               ></Route>

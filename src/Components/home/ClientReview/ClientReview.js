@@ -22,7 +22,7 @@ const ClientReview = () => {
       <div className="grid md:grid-cols-3 gap-5">
         {[...review]
           ?.reverse()
-          ?.slice(0, 3)
+          ?.slice(0, 6)
           ?.map((rev) => (
             <ReviewDetail rev={rev} key={rev._id}></ReviewDetail>
           ))}

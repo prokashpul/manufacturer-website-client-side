@@ -40,6 +40,11 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/dashboard/manage-all-tools">
+                  Manage All Tools
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/dashboard/add-tools">Add Tools</NavLink>
               </li>
               <li>
